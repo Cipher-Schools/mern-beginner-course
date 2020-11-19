@@ -1,8 +1,85 @@
-body{
-    background: lightyellow;
+/* a{
+    text-decoration: none;
+    color: red;
+} */
+
+/* Specificity
+
+    id : 100
+    class: 10
+    tag: 1
+
+*/
+
+/* 110 */
+/* #header.welcome {
+    background: darkorchid;
+} */
+
+/* 100 */
+/* #header{
+    background: brown;
+} */
+
+/* 111 */
+/* header#header.welcome{
+    background: gray;
+} */
+
+/* 1 */
+/* header{
+    background: lightskyblue;
+    color: white;
+} */
+
+/* 10 */
+/* .welcome{
+    background: green;
+} */
+
+/* .para{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+    color: peru;
+}
+
+p{
+    text-decoration: underline;
+    color: royalblue;
+} */
+
+
+
+/* Parent Child in CSS */
+
+/* p{
+    color: red;
 }
 
 header{
-    background-color: salmon; 
-    color: azure;
+    color: green;
+} */
+
+span{
+    display: block;
 }
+
+
+/* Box model */
+#header{
+    margin: 10px 5px 10px 5px;
+    border: 3px dotted cyan;
+    padding: 5px;
+}
+
+.box{
+    margin: 10px auto;
+    border: 2px dashed black;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+    display: inline-block;
+}
+
+
