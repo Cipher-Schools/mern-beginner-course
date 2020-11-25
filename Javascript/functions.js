@@ -69,6 +69,6 @@
 
     // funcExp()
 
-    let newFunc = name =>  console.log(name); // Arrow
-    
-    newFunc('cipher'); // argument
+    // let newFunc = name =>  console.log(name); // Arrow
+
+    // newFunc('cipher'); // argument
