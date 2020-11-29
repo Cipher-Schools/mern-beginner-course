@@ -1,6 +1,7 @@
+// object destructuring
 import React, { Component } from 'react';
 // Alias
-import Pizza from './Pizza.js'
+import Pizza from './components/Pizza.js'
 
 // function App() {
 //   return (
@@ -10,21 +11,45 @@ import Pizza from './Pizza.js'
 //   );
 // }
 
-// Class based components
+// Class based components 
+// inheritence 
 class App extends Component{
 
+  state = {
+        // pizzaPlaces: []
+        dynamicName: "Pizza Hunter", 
+        // brand: "Pizza",
+        // description: "best pizza in town"
+        pizzaPlaces: [
+          { name: "Pizza Hut", description: "Best Pizza", id: 1}, 
+          { name: "Dominoes", description: "Best Pizza in town", id: 2}, 
+          { name: "Papa Johns", description: "Pizza place", id: 3}, 
+          { name: "Ovenbricks", description: "authentic pizza", id: 4},
+          { name: "Ovenbricks", description: "authentic pizza", id: 5},
+          { name: "Ovenbricks", description: "authentic pizza", id: 6},
+        ]
+    }
+  
+  deleteCard = (id) => {
+        console.log(id);
+        // this.state.dynamicName // don't change the state directly
+        let pizzaPlaces = this.state.pizzaPlaces.filter( (pizzaPlace) => {
+          return pizzaPlace.id !== id
+        } )
+        this.setState({
+            pizzaPlaces: pizzaPlaces
+        })
+    }
+
   render(){
-    let dynamicName='React is mind blowing'
-    let brand = "PizzaHut"
-    let description = "Best pizza in town!!"
-    let brand2 = "Dominoes"
-    let description2 = "Better than the best Pizza"
     return(
       <div>
-        <h1>{dynamicName}</h1>
-        <Pizza brand={brand} description={description}></Pizza>
-        <Pizza brand={brand2} description={description2}></Pizza>
+        <h1>{this.state.dynamicName}</h1>        
+        {/* <Pizza brand={this.state.pizzaPlaces[3].name} description={this.state.pizzaPlaces[2].description}></Pizza> */}
+        <Pizza pizzaPlaces={this.state.pizzaPlaces} deleteCard={this.deleteCard}></Pizza>    
+        {/* <Pizza></Pizza> */}
       </div>
+
       
     )
   }
