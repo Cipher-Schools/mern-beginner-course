@@ -10,7 +10,7 @@ let Pizza = (props) => {
     // condition ? true : false
 
     // Conditional Rendering
-    let pizzaPlacesList = props.pizzaPlaces ? (props.pizzaPlaces.map( (pizzaPlace) => {
+    let pizzaPlacesList = props.pizzaPlaces.length ? (props.pizzaPlaces.map( (pizzaPlace) => {
         console.log(pizzaPlace);
         return(
           <div className='pizza ' key={pizzaPlace.id}>

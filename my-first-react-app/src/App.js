@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 // Alias
 import Pizza from './components/Pizza.js'
+import AddPizza from './components/AddPizza';
 
 // function App() {
 //   return (
@@ -30,6 +31,20 @@ class App extends Component{
         ]
     }
   
+
+  addCard = (details) => {
+    console.log(details);
+    // console.log(6 + Math.random()*10);
+    details.id = Math.floor(7 + Math.random()*10); // this.state.pizzaPlaces.length + 1
+    console.log(details);
+    // this.state.pizzaPlaces.push(details);
+    // ES6 feature: Spread operators : copy the elements from the source(Array, objects) [...oldArray, details]
+    this.setState({
+      pizzaPlaces: [...this.state.pizzaPlaces ,details]
+    })
+
+  }
+
   deleteCard = (id) => {
         console.log(id);
         // this.state.dynamicName // don't change the state directly
@@ -39,6 +54,10 @@ class App extends Component{
         this.setState({
             pizzaPlaces: pizzaPlaces
         })
+        // [].push(23);
+
+        // rendering problem
+        // this.state.pizzaPlaces = pizzaPlaces;
     }
 
   render(){
@@ -48,6 +67,7 @@ class App extends Component{
         {/* <Pizza brand={this.state.pizzaPlaces[3].name} description={this.state.pizzaPlaces[2].description}></Pizza> */}
         <Pizza pizzaPlaces={this.state.pizzaPlaces} deleteCard={this.deleteCard}></Pizza>    
         {/* <Pizza></Pizza> */}
+        <AddPizza addCard={this.addCard}></AddPizza>
       </div>
 
       
