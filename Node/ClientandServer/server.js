@@ -1,9 +1,12 @@
 var http = require('http');
 // Hypertext transfer protocol
 
-let server = http.createServer((req, res) =>{
- 
-    res.end("Hello");
+let server = http.createServer((req, res) => { 
+    // console.log(req); 
+    // console.log(res);
+    
+    res.writeHead(404, { 'Content-Type': 'text/html'});
+    res.end("<h1>Hello from the otherside!!</h1>");
 } 
 )
 
