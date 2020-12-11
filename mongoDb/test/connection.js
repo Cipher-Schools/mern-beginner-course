@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const URL = 'mongodb+srv://new-user-123:new-user-123@testcluster.vyftd.mongodb.net/testing?retryWrites=true&w=majority';
+const URL = 'mongodb+srv://new-user-123:new-user-123@testcluster.vyftd.mongodb.net/test?retryWrites=true&w=majority';
 
 
 before((done) => {
@@ -13,5 +13,12 @@ before((done) => {
         done();
     }).on('error', (error) => {
         console.log('Unable to connect', error)
+    });
+})
+
+// Drop my collections before each test
+beforeEach( (done) => {
+    mongoose.connection.collections.people.drop(()=> {
+        done();
     });
 })

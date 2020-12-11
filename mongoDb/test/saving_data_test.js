@@ -5,7 +5,7 @@ describe('saving records', () => {
     it('it saves a record to db', (done) => {
         let newUser = new Users({
             name: 'John',
-            age: 23
+            age: 24
         })
         // promises (resolve, reject) => Promise.then( () => { }).catch( () => { })
         newUser.save().then( () => {
