@@ -15,6 +15,7 @@ describe('Updating records', () =>{
     })
 
     it('it updates on record in the db', (done)=>{
+        
         User.findOneAndUpdate({ name: 'Jon Snow'}, {name: 'Arya', age: 24}, {useFindAndModify: false}).then((data)=>{
             console.log(data);
             User.findById({ _id: newUser._id}).then( (result) => {
