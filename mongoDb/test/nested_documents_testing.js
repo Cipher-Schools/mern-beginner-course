@@ -3,6 +3,7 @@ const Album = require('../models/album');
 const mongoose = require('mongoose');
 
 describe('relational records', () => {
+    // Mocha hooks handleChange(event)
     beforeEach( (done) => {
         mongoose.connection.collections.albums.drop(()=> {
             done();
